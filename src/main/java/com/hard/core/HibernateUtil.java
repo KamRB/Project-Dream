@@ -6,6 +6,7 @@ public class HibernateUtil {
     private static final SessionFactory sessionFactory;
     static {
             try {
+            	//TODO: need to figure out a way to get the session... failing right now
                     // Create the SessionFactory from hibernate.cfg.xml
                     Configuration configuration = new Configuration();
                     configuration.configure();
