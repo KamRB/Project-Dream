@@ -48,7 +48,7 @@ public class HomeController {
 	public String kam(Locale locale, Model model, @RequestParam("name") String name) {
 		logger.info("Welcome to kam! The client locale is {}.", locale);
 		
-		hibernate();
+		//hibernate();
 		model.addAttribute("name", printer.printMessage() + name);
 		
 		return "kam";
