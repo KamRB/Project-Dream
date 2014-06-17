@@ -1,4 +1,4 @@
-package com.hard.core;
+package com.hard.core.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
@@ -15,6 +15,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import com.hard.core.MessagePrinter;
+import com.hard.core.hibernate.HibernateUtil;
+import com.hard.core.model.Message;
+import com.hard.core.service.MessageService;
 
 /**
  * Handles requests for the application home page.
@@ -33,6 +38,8 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
+		//mongoSetup();
+		hibernate();
 		
 		Date date = new Date();
 		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
@@ -48,7 +55,7 @@ public class HomeController {
 	public String kam(Locale locale, Model model, @RequestParam("name") String name) {
 		logger.info("Welcome to kam! The client locale is {}.", locale);
 		
-		//hibernate();
+		
 		model.addAttribute("name", printer.printMessage() + name);
 		
 		return "kam";
@@ -59,9 +66,10 @@ public class HomeController {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
+        
         Message p1 = new Message();
-        p1.setFirstName("kam");
-        p1.setLastName("rb");
+        p1.setFirstName("justin");
+        p1.setLastName("bieber");
         p1.setAge(25);
         long personId = (Long) session.save(p1);
         session.getTransaction().commit();
