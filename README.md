@@ -1,15 +1,15 @@
 Hard
 ====
 
-Ok Noobs! lets do this!
+Ok Noobs! lets do this!<br/>
 
-Rather than talking about various technologies, lets see some examples. Add modules.
+Rather than talking about various technologies, lets see some examples. Add modules.<br/>
 
-TODO:
+TODO:<br/>
 
--Add hibernate support -Kam
--Add Jason support -Uttam
--Add NodeJs support -Punke
--Add AngularJs support -Aayush
--Deployable WAR
+-Add hibernate support -Kam <br/>
+-Add Jason support -Uttam  <br/>
+-Add NodeJs support -Punke  <br/>
+-Add AngularJs support -Aayush  <br/>
+-Deployable WAR  <br/>
 
