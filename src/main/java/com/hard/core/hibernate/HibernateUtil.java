@@ -1,17 +1,18 @@
-package com.hard.core;
+package com.hard.core.hibernate;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistryBuilder;
 
 public class HibernateUtil {
     private static final SessionFactory sessionFactory;
     static {
             try {
-            	//TODO: need to figure out a way to get the session... failing right now
-                    // Create the SessionFactory from hibernate.cfg.xml
                     Configuration configuration = new Configuration();
-                    configuration.configure();
-
-                    sessionFactory = configuration.buildSessionFactory();
+                    configuration.configure("hibernate.cfg.xml");
+                    ServiceRegistryBuilder ssrb = new ServiceRegistryBuilder().applySettings(configuration.getProperties());
+                    sessionFactory = configuration.buildSessionFactory(ssrb.buildServiceRegistry());
+                
+                    
             } catch (Throwable ex) {
                     // Make sure you log the exception, as it might be swallowed
                     System.err.println("Initial SessionFactory creation failed." + ex);

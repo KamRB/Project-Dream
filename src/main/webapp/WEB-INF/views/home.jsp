@@ -12,11 +12,10 @@
     <title>Dream</title>
 	
 	<link rel="stylesheet" href="resources/css/bootstrap.min.css" type="text/css" /> 
-	<link rel="stylesheet" href="resources/css/bootstrap.css" type="text/css" /> 
 	<link rel="stylesheet" href="resources/css/narrow.css" type="text/css" /> 
-	<script type="text/javascript" src="resources/js/bootstrap.js"></script>
-	<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="resources/js/jquery.min.js"></script>
+	<script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+
 
   </head>
 
